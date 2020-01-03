@@ -13,10 +13,10 @@ export async function get(req, res) {
   );
   // Read the files and parse the metadata + content
   const postsFrontMatter = await Promise.all(
-    posts.map(async guide => {
-      const content = (await fs.readFile(guide)).toString();
-      // Add the slug (based on the filename) to the metadata, so we can create links to this blog guide
-      return {...fm(content).attributes, slug: path.parse(guide).name};
+    posts.map(async post => {
+      const content = (await fs.readFile(post)).toString();
+      // Add the slug (based on the filename) to the metadata, so we can create links to this blog post
+      return {...fm(content).attributes, slug: path.parse(post).name};
     }),
   );
 

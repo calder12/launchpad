@@ -21,7 +21,8 @@
 </style>
 
 <svelte:head>
-	<title>Launchpad</title>
+	<title>launchpad</title>
+  <meta name="description" content="launchpad is a technical development blog from the creators of rocketparty.io"/>
 </svelte:head>
 <div>
 <h1>Launchpad</h1>

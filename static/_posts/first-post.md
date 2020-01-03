@@ -2,6 +2,7 @@
 layout: blog
 title: Svelte Starter
 date: 2019-12-18T03:04:44.183Z
+description: "This is a blog post!"
 category:
   - Svelte
 ---

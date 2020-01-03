@@ -2,6 +2,7 @@
 layout: blog
 title: Second Post
 date: 2019-12-18T03:04:44.183Z
+description: This is another blog post!
 category:
   - Svelte
 ---

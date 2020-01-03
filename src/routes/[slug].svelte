@@ -16,19 +16,24 @@
   import marked from 'marked'
   import hljs from 'highlight.js';
   import  {fade}  from "svelte/transition";
+  import dateFormat from "dateformat"
 
   export let postMd;
   $: frontMatter = fm(postMd);
   $: post = {
     ...frontMatter.attributes,
-    html: marked(frontMatter.body)
+    html: marked(frontMatter.body),
+    displayDate: makeDate(frontMatter.attributes.date)
   };
-console.log(postMd)
   onMount(async () => {
     document.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightBlock(block);
     });
-	});
+  });
+  
+  function makeDate(oDate) {
+    return dateFormat(oDate, "mmmm, dS, yyyy")
+  }
 </script>
 
 <style>
@@ -44,12 +49,13 @@ console.log(postMd)
 </style>
 
 <svelte:head>
-	<title>{post.title}</title>
+	<title>launchpad :: {post.title}</title>
+  <meta name="description" content="{post.description}"/>
 </svelte:head>
 
 <div class="container" transition:fade="{{duration: 200 }}">
 <h1>{post.title}</h1>
-<p>{post.date}</p>
+<p>{post.displayDate}</p>
 
 <div class='content'>
 	{@html post.html}
