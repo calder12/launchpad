@@ -6,7 +6,11 @@
 	nav {
 		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
-		padding: 0 1em;
+		padding: 0 1rem;
+		position: fixed;
+		width: 100%;
+		background-color: #fff;
+		z-index: 999;
 	}
 
 	ul {
@@ -43,7 +47,7 @@
 
 	a {
 		text-decoration: none;
-		padding: 1em 0.5em;
+		padding: 0.75em;
 		display: block;
 	}
 	a:hover {
